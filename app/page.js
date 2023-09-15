@@ -1,14 +1,28 @@
 import Link from "next/link";
 import StudentInfo from "./StudentInfo";
 
-
 export default function Home() {
-  
+  const headingStyle = {
+    textAlign: 'center', 
+    color: 'blue',    
+    fontWeight: 'bold',       
+    fontSize: '36px',       
+    fontFamily: 'Lucida Console, Monaco, monospace'
+  };
+
+  const paragraphStyle = {
+    textAlign: 'center', 
+    color: 'blue',    
+    fontWeight: 'bold',       
+    fontSize: '24px',       
+    fontFamily: 'Lucida Console, Monaco, monospace'
+  };
+
   return (
     <main>
-        <h1>CPRG 306: Web Development 2 - Assignments</h1>
+        <h1 style={headingStyle}>CPRG 306: Web Development 2 - Assignments</h1>
         <StudentInfo />
-        <div>
+        <div style={paragraphStyle}>
           <ul>
               <li>
                 <p>
@@ -21,9 +35,7 @@ export default function Home() {
                 </p>
               </li>    
           </ul>
-       
         </div>
-      
     </main>
   );
 }
