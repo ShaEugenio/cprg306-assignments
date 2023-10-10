@@ -64,26 +64,42 @@ export default function NewItem(){
                         className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
                     />
                     </label>
-
+                    
                     <label className="block mb-4">
                     <span className="text-gray-800">Item Quantity:</span>
                     <input
+                        type="number"
                         required
                         onChange={handleQuantityChange}
                         value={quantity}
+                        min="1"
+                        max="99"
                         className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
                     />
                     </label>
 
-                    <label className="block mb-4 ">
+                    <label className="block mb-4">
                     <span className="text-gray-800">Item Category:</span>
-                    <input
+                    <select
                         required
                         onChange={handleCategoryChange}
                         value={category}
                         className="mt-1 p-1 block w-full rounded-md text-black bg-gray-100 focus:bg-white"
-                    />
+                    >
+                        <option value="Produce">Produce</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Bakery">Bakery</option>
+                        <option value="Meat">Meat</option>
+                        <option value="Frozen Foods">Frozen Foods</option>
+                        <option value="Canned Goods">Canned Goods</option>
+                        <option value="Dry Goods">Dry Goods</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Household">Household</option>
+                        <option value="Other">Other</option>
+                    </select>
                     </label>
+
 
 
                     <button
