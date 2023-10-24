@@ -1,32 +1,23 @@
 "use client";
 import { useState } from "react";
 
-export default function NewItem(){
+export default function NewItem({onAddItem}){
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
     const [itemCreated, setItemCreated] = useState(false);
-    // const { onAddItem } = props;
 
     function handleSubmit(submit)
     {
-        // Replace the alert functionality by calling the onAddItem prop with the item object when the form is submitted. The item object should have the following properties: name, quantity, and category.
-
-        onAddItem({
-            name,
-            quantity,
-            category
-        });
-
         submit.preventDefault();
 
-        const NewItem = {
+        const newItem = {
             name,
             quantity,
             category
         };
 
-        console.log(NewItem);
+        onAddItem(newItem);
 
         setItemCreated(true);
         setName("");
@@ -117,9 +108,6 @@ export default function NewItem(){
                 </form>
                 </div>
             </div>
-
-
-            
         </main>
     );
 }
